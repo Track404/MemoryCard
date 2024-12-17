@@ -101,6 +101,7 @@ li {
   border-bottom: 2px white solid;
   background-color: black;
   padding-left: 3vw;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 .scoreContainer {
   display: flex;
@@ -111,6 +112,7 @@ li {
   margin-top: 5px;
   height: 150px;
   width: 150px;
+
   background-image: url(../src/assets/15.svg);
   background-repeat: no-repeat;
   background-size: cover;
