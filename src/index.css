@@ -24,8 +24,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -74,7 +72,14 @@ button:focus-visible {
   align-items: center;
 }
 
+.scoreBoard {
+  display: flex;
+  justify-content: space-around;
+}
+
 .containerCard {
   display: grid;
+
+  gap: 10px;
   grid-template-columns: repeat(4, 1fr);
 }

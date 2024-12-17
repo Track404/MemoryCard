@@ -7,23 +7,36 @@ export default function Game() {
   const [clickCardName, setClickCardName] = useState([]);
 
   const [data, setData] = useState(null);
+  const [info, setInfo] = useState(null);
+
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon/?limit=12', { mode: 'cors' })
       .then((response) => response.json())
       .then((json) => setData(json))
+
       .catch((error) => console.error(error));
   }, []);
-
+  function shulffleArray(array) {
+    array.sort(() => 0.5 - Math.random());
+  }
+  function checkTopScore() {
+    if (topScore <= currentScore) {
+      setTopScore(currentScore + 1);
+    }
+  }
   function cardClick(e) {
     let theId = e.currentTarget.id;
     if (clickCardName.includes(theId)) {
       setCurrentScore(0);
       setClickCardName([]);
     } else {
+      setInfo({ ...data, results: shulffleArray(data.results) });
       setCurrentScore(currentScore + 1);
       setClickCardName([...clickCardName, theId]);
+      checkTopScore();
     }
   }
+
   return (
     data && (
       <>
