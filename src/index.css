@@ -24,8 +24,10 @@ a:hover {
 
 body {
   margin: 0;
+  padding-bottom: 5px;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #ffffff;
 }
 
 h1 {
@@ -65,21 +67,105 @@ button:focus-visible {
   }
 }
 
+li {
+  list-style: none;
+}
+
 .Card {
-  border: 2px solid white;
+  border: 2px solid black;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: rgb(49, 49, 49);
+  transition: transform 0.5s ease-out 0.5s,
+    background-color 0.5s ease-out 0.5s box-shadow 0.5s ease-out 0.5;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 20vw;
+  max-height: 50vh;
+}
+.Card:hover {
+  background-color: rgb(69, 69, 69);
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.scoreBoard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px white solid;
+  background-color: black;
+  padding-left: 3vw;
+}
+.scoreContainer {
+  display: flex;
+  gap: 7vw;
+  margin-right: 7vw;
+}
+.logo {
+  margin-top: 5px;
+  height: 150px;
+  width: 150px;
+  background-image: url(src/assets/15.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.score {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.scoreBoard {
-  display: flex;
-  justify-content: space-around;
+.score h3 {
+  margin: 0;
+  margin-bottom: 12px;
+  font-size: 32px;
 }
 
 .containerCard {
   display: grid;
+  margin: 5vw;
 
-  gap: 10px;
+  gap: 20px;
   grid-template-columns: repeat(4, 1fr);
+}
+ul {
+  padding: 0;
+}
+
+@media (max-width: 1000px) {
+  .containerCard {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .Card {
+    max-width: 30vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .containerCard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .Card {
+    max-width: 40vw;
+  }
+  .scoreContainer {
+    display: flex;
+    gap: 3vw;
+    margin-right: 1vw;
+  }
+  .logo {
+    margin-top: 5px;
+    height: 120px;
+    width: 120px;
+    background-image: url(src/assets/15.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }

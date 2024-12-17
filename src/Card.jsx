@@ -19,7 +19,7 @@ export default function Card({ url, name, onClick }) {
           <img src={data.sprites.front_default} alt="PokemonImage" />
 
           <div>
-            <h3>Abilities :</h3>
+            <h3>Abilities</h3>
             <ul>
               {data.abilities.map((info) => {
                 return <li key={crypto.randomUUID()}>{info.ability.name}</li>;

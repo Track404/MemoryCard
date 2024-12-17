@@ -41,15 +41,19 @@ export default function Game() {
     data && (
       <>
         <div className="scoreBoard">
-          <div>
-            <h2>Top Score</h2>
-            <p>{topScore}</p>
-          </div>
-          <div>
-            <h2>Current Score</h2>
-            <p>{currentScore}</p>
+          <div className="logo"></div>
+          <div className="scoreContainer">
+            <div className="score">
+              <h2>Top Score</h2>
+              <h3>{topScore}</h3>
+            </div>
+            <div className="score">
+              <h2>Current Score</h2>
+              <h3>{currentScore}</h3>
+            </div>
           </div>
         </div>
+
         <div className="containerCard">
           {data.results.map((info) => {
             return (
