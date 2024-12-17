@@ -111,7 +111,7 @@ li {
   margin-top: 5px;
   height: 150px;
   width: 150px;
-  background-image: url(src/assets/15.svg);
+  background-image: url(../src/assets/15.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
